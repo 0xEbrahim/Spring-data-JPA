@@ -15,8 +15,7 @@ import java.time.LocalDateTime;
 @Entity(name = "authors")
 public class Author {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "author_seq")
-    @SequenceGenerator(name = "author_seq", sequenceName = "author_seq", allocationSize = 4)
+    @GeneratedValue
     private Integer id;
 
     @Column(length = 35)

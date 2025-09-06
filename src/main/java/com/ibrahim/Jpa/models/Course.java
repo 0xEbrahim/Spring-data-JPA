@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Course {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "author_seq")
+    @GeneratedValue
     private Integer id;
 
     private String name;

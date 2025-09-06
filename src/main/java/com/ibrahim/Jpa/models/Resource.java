@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity(name = "lectures")
-public class Lecture {
+@Entity(name = "resources")
+public class Resource {
 
     @Id
     @GeneratedValue
