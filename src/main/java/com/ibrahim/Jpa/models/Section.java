@@ -1,5 +1,8 @@
 package com.ibrahim.Jpa.models;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,8 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity(name = "courses")
-public class Course {
+@Entity(name = "sections")
+public class Section {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "author_seq")
@@ -18,5 +21,5 @@ public class Course {
 
     private String name;
 
-    private String description;
+    private int order;
 }
