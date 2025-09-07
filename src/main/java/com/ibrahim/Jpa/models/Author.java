@@ -13,6 +13,9 @@ import java.util.List;
 @AllArgsConstructor
 @SuperBuilder
 @Entity(name = "authors")
+@NamedQueries({
+        @NamedQuery(name = "Author.findByAge",query = "SELECT a FROM authors a WHERE a.age=:age")
+})
 public class Author extends BaseEntity{
 
 
