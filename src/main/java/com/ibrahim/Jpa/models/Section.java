@@ -1,22 +1,16 @@
 package com.ibrahim.Jpa.models;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity(name = "sections")
-public class Section {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
+public class Section extends BaseEntity{
 
     private String name;
 

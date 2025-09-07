@@ -1,23 +1,20 @@
 package com.ibrahim.Jpa.models;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity(name = "authors")
-public class Author {
-    @Id
-    @GeneratedValue
-    private Integer id;
+public class Author extends BaseEntity{
+
 
     @Column(length = 35)
     private String firstName;
@@ -28,20 +25,6 @@ public class Author {
     private String email;
 
     private Integer age;
-
-
-    @Column(
-            updatable = false,
-            nullable = false
-    )
-    private LocalDateTime createdAt;
-
-
-    @Column(
-            insertable = false,
-            nullable = true
-    )
-    private LocalDateTime  updatedAt;
 
     @ManyToMany(mappedBy = "authors")
     private List<Course> courses;

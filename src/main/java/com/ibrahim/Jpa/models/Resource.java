@@ -1,24 +1,21 @@
 package com.ibrahim.Jpa.models;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity(name = "resources")
-public class Resource {
+public class Resource extends BaseEntity {
 
-    @Id
-    @GeneratedValue
-    private Integer id;
 
     private String name;
 
     private int size;
 
-
+    @OneToOne
+    @JoinColumn(name="lecture_id")
+    private Lecture lecture;
 }
