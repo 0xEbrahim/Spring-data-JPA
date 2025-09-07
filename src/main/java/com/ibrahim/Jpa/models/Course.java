@@ -1,6 +1,7 @@
 package com.ibrahim.Jpa.models;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
@@ -8,7 +9,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity(name = "courses")
 public class Course extends BaseEntity {
 

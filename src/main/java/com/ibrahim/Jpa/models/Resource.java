@@ -1,15 +1,23 @@
 package com.ibrahim.Jpa.models;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity(name = "resources")
-public class Resource extends BaseEntity {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="resource_type")
+public class Resource {
 
+    @Id
+    @GeneratedValue
+    private Integer id;
 
     private String name;
 

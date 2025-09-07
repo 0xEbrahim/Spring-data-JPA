@@ -1,12 +1,13 @@
 package com.ibrahim.Jpa.models;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity(name = "lectures")
 public class Lecture extends BaseEntity{
 
