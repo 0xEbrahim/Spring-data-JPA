@@ -44,5 +44,5 @@ public class Author {
     private LocalDateTime  updatedAt;
 
     @ManyToMany(mappedBy = "authors")
-    private List<Course> course;
+    private List<Course> courses;
 }

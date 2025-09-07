@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,4 +21,11 @@ public class Section {
     private String name;
 
     private int sectionOrder;
+
+    @ManyToOne
+    @JoinColumn(name="course_id")
+    private Course course;
+
+    @OneToMany(mappedBy = "section")
+    private List<Lecture> lectures;
 }
